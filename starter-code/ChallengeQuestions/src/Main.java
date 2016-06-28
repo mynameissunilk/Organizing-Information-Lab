@@ -1,8 +1,40 @@
+import org.w3c.dom.ls.LSException;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        //Add code here to test your solutions
+
+        /** Question 1 **/
+        Random randnyry = new Random();
+        int[] labArray = new int[10];
+        for(int i = 0; i <+labArray.length-1; i++){
+            labArray[i] = randy.nextInt(100);
+            System.out.println(labArray[i]);
+        }
+
+
+        int[] taco = new int{0, 22, 67, 44};
+        System.out.println(findLargestAndSmallest(labArray));
+
+
+        /** Question 2 **/
+        List<Integer> labList = new LinkedList<>();
+        labList.add(43);
+        labList.add(33);
+        labList.add(777);
+        labList.add(2);
+        labList.add(205);
+        System.out.println(sumOfTwoLargest(labList));
+
+
+        /** Question 3 **/
+        List<Integer>dupList = new LinkedList<>();
+        for(int i = 0; i <= 10; i++){
+            dupList.add(i);
+        }
+        dupList.add(2);
+        dupList.add(7);
+        // dupList should have: 0,1,2,3,4,5,6,7,8,9,2,7
     }
 
     /**
@@ -16,7 +48,22 @@ public class Main {
      * @return An array of integers with two elements, the largest and smallest from the method parameter
      */
     public static int[] findLargestAndSmallest(int array[]){
+        int[]lsReturn = new int[2];
 
+        int small = 0;
+        int big = 0;
+
+
+        for(int i = 0; i<=array.length-1; i++){
+            if(array[i] > big)
+                big = array[i];
+
+            if(array[i] < small)
+                small = array[i];
+        }
+        lsReturn[0] = small;
+        lsReturn[1] = big;
+        return lsReturn;
     }
 
 
@@ -32,7 +79,13 @@ public class Main {
      * @return Sum of the two largest values
      */
     public static int sumOfTwoLargest(List intList){
-       
+        //intList.sort(Comparator.comparingInt());
+        Collections.sort(intList);
+
+        return (Integer)intList.get(intList.size()-1) + (Integer)intList.get(intList.size()-2);
+        }
+
+
     }
 
 
@@ -51,7 +104,13 @@ public class Main {
      * @return A List of Integers that doesn't contain duplicates.
      */
     public static List removeDuplicatesFromList(List intList){
-
+        List<Integer> listDuplicate = new LinkedList<>();
+        for(int i = 0; i <= intList.size() -1; i++) {
+            listDuplicate.add((Integer) intList.get(i));
+            if(listDuplicate.contains(intList.get(i)))
+                i++;
+        }
+        return listDuplicate;
     }
 
 
@@ -78,6 +137,14 @@ public class Main {
      * @return Array of sorted integers, merged from array1 and array2
      */
     public static int[] mergeSortedArrays(int[] array1, int[] array2){
+        //check for avail. space,
+        //merge
+        //array1 must be the merged array
+
+        array1 = new int[array1.length + array2.length];
+        //Arrays.
+
         return null;
     }
 }
+// math.powe... check it out.
